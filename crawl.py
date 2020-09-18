@@ -41,7 +41,7 @@ def getText(soup):
 
 
 
-def getData(URL):
+def getData(URL, DM):
     url_file.write(URL+'\n')
     used[URL] = True
 
@@ -57,9 +57,9 @@ def getData(URL):
                 URL = DOMAIN + URL
             if used.get(URL):
                 continue
-            getData(URL)
+            getData(URL, DM)
 
 DOMAIN = "https://en.wikipedia.org"
-START_URL = f"https://en.wikipedia.org/wiki/Reddit"
-getData(START_URL)
+START_URL = "https://en.wikipedia.org/wiki/Reddit"
+getData(START_URL, DOMAIN)
 
